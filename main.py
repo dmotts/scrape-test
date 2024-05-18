@@ -1,9 +1,7 @@
-from seleniumbase import SB
+from seleniumbase import Driver
 
-with SB(uc=True, demo=True) as sb:
-    sb.open("https://www.google.com/")
-    sb.type("#lst-ib", "test")
-    sb.click("input[type='submit']")
-    sb.click("div[class='r']")
-
-    
+driver = Driver(uc=True)
+url = "https://gitlab.com/users/sign_in"
+driver.uc_open_with_reconnect(url, 3)
+driver.sleep(10)
+driver.quit()
