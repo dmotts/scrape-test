@@ -1,10 +1,4 @@
-from seleniumbase import Driver
+from seleniumbase import SB
 
-driver = Driver(uc=True, browser='chrome', headless=False)
-url = "https://google.com/"
-try: 
-    driver.open(url)
-    print(f"Opened {url}")
-    driver.sleep(100)
-finally:
-    driver.quit()
+with SB(uc=True, headless=False) as sb:
+    sb.driver.get("https://www.yahoo.com/")
