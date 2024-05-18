@@ -5,6 +5,6 @@ url = "https://gitlab.com/users/sign_in"
 try: 
     driver.uc_open(url)
     print(f"Opened {url}")
-    driver.sleep(1000)
+    driver.sleep(100)
 finally:
     driver.quit()
